@@ -8,11 +8,17 @@
         }
         public string AnalyseMood()
         {
-            if (message.Contains("Sad"))
+            try
             {
-                return "SAD";
+                if (message.Contains("Sad"))
+                {
+                    return "SAD";
+                }
+                return "HAPPY";
+            }catch(NullReferenceException)
+            {
+                return "HAPPY";
             }
-            return "HAPPY";
         }
     }
 }
